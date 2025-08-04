@@ -1,0 +1,402 @@
+/* CSS Variables for Theme Management */
+:root {
+  /* Light theme colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #282c34;
+  --text-secondary: #61dafb;
+  --border-color: #e9ecef;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #282c34;
+  --text-primary: #ffffff;
+  --text-secondary: #61dafb;
+  --border-color: #404040;
+  --button-bg: #0056b3;
+  --button-text: #ffffff;
+}
+
+.app-root {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-secondary);
+}
+
+/* Side navigation bar styles */
+.side-nav {
+  width: 210px;
+  background: #1976d2;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px 0 #0001;
+  padding: 0;
+}
+
+.side-nav-header {
+  padding: 30px 12px 15px 22px;
+  background: #1565c0;
+  border-bottom: 1px solid #1565c045;
+}
+.side-nav-title {
+  font-size: 1.28rem;
+  font-weight: bold;
+}
+.side-nav-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex: 1;
+  font-size: 1rem;
+}
+.side-nav-list li {
+  padding: 18px 22px 18px 22px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  color: #e3f2fd;
+}
+.side-nav-list li.active,
+.side-nav-list li:hover {
+  background: #ff9800;
+  color: #282c34;
+  border-radius: 0 24px 24px 0;
+}
+
+/* Main content wrap */
+.dashboard-wrap {
+  flex: 1;
+  padding: 0 0 0 0;
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* Dashboard header and layout */
+.dashboard-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 25px 15px 25px;
+}
+.dashboard-header {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+.dashboard-header h2 {
+  font-size: 2rem;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+/* Metrics widgets */
+.metrics-widgets {
+  margin: 18px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.metrics-row {
+  display: flex;
+  gap: 18px;
+}
+
+.metrics-widget {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  box-shadow: 0 2px 9px 0 #0002;
+  padding: 30px 35px;
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 2px solid var(--border-color);
+  transition: border 0.2s;
+}
+.metrics-widget .metrics-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+  color: #424242;
+}
+.metrics-widget .metrics-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1976d2;
+}
+.metrics-widget.metrics-accent .metrics-value {
+  color: #ff9800;
+}
+.metrics-widget.metrics-outline {
+  background: #fff8f6;
+  border: 2px dashed #ff980099;
+}
+.metrics-widget.metrics-primary {
+  border-color: #1976d2;
+}
+
+/* Device list inside widget */
+.device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.device-item {
+  font-size: 0.97rem;
+  color: #424242;
+}
+
+/* Heatmap container */
+.heatmap-container {
+  background: #ebf4fa;
+  border-radius: 10px;
+  border: 1.5px solid #1976d250;
+  margin: 7px 0 0 0;
+  padding: 6px;
+  height: 110px;
+}
+.heatmap-svg {
+  width: 100%;
+  height: 80px;
+  display: block;
+}
+.heatmap-placeholder {
+  font-size: 0.98rem;
+  color: #b0b0b0;
+  padding: 30px 0 0 0;
+}
+
+/* Filters panel */
+.filters-panel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 12px 16px;
+  background: #fafafc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px 0 #0001;
+}
+.filters-panel label {
+  color: #424242;
+  margin-right: 11px;
+  font-size: 1rem;
+}
+.filters-panel input,
+.filters-panel select {
+  margin-left: 5px;
+  padding: 6px 10px;
+  border: 1px solid #1976d273;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.97rem;
+}
+.filters-panel input:focus,
+.filters-panel select:focus {
+  outline: 1.5px solid #1976d2;
+  border-color: #1976d2;
+}
+
+/* Event log section */
+.event-log-section {
+  margin-top: 38px;
+  background: #fafafb;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px #0001;
+  padding: 22px;
+}
+.event-log-section h3 {
+  color: #1976d2;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+.event-log-table-container {
+  overflow-x: auto;
+}
+.event-log-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.99rem;
+  background: #fff;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.event-log-table th,
+.event-log-table td {
+  padding: 11px 10px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+.event-log-table th {
+  background: #f3f7fd;
+  color: #1976d2;
+  font-size: 1rem;
+}
+.event-log-table td {
+  color: #505050;
+}
+.event-log-table tr:last-child td {
+  border-bottom: none;
+}
+.no-event-log {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 30px;
+  background-color: #ff9800;
+  color: #282c34;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.11);
+}
+.theme-toggle:hover {
+  opacity: 0.96;
+  transform: translateY(-2px);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 1000px) {
+  .dashboard-main {
+    padding: 22px 2vw;
+  }
+  .side-nav {
+    width: 138px;
+    font-size: 0.88rem;
+    min-width: 50px;
+  }
+  .dashboard-header h2 {
+    font-size: 1.1rem;
+  }
+  .metrics-widget {
+    padding: 18px 12px;
+    min-width: 110px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-root {
+    flex-direction: column;
+  }
+  .side-nav {
+    flex-direction: row;
+    width: 100vw;
+    min-height: unset;
+    padding-bottom: 4px;
+    background: linear-gradient(90deg, #1976d2 80%, #ff9800 200%);
+    box-shadow: 0 2px 5px #0002;
+    z-index: 100;
+  }
+  .side-nav-header,
+  .side-nav-list {
+    display: none;
+  }
+  .dashboard-wrap {
+    padding-left: 0;
+    min-height: unset;
+  }
+  .filters-panel {
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 10px 0px;
+  }
+  .dashboard-main {
+    padding: 11px 0vw;
+  }
+}
+
+/* Other defaults remain unchanged */
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: var(--bg-secondary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.App-link {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
